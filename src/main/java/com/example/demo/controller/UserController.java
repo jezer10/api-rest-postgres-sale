@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,12 +19,13 @@ public class UserController {
 	UserService userService;
 
 	@GetMapping("/list")
-	public List<User> readAll(){
+	public List<User> readAll() {
 		return userService.readAll();
 	}
+
 	@GetMapping("/user/{id}")
-	public User read(@PathVariable Long id) {
+	public Optional<User> read(@PathVariable Long id) {
 		return userService.read(id);
 	}
-	
+
 }

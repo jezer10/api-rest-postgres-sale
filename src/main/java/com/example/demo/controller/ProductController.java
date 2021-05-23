@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,10 +16,10 @@ import com.example.demo.service.ProductService;
 public class ProductController {
 	@Autowired
 	ProductService productService;
+
 	@GetMapping("/{id}")
-	public Product read(@PathVariable Long id) {
+	public Optional<Product> read(@PathVariable Long id) {
 		return productService.read(id);
 	}
-	
 
 }
