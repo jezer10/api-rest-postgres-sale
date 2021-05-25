@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
+
+
 @Data
 @Entity(name = "usertab")
 public class User {

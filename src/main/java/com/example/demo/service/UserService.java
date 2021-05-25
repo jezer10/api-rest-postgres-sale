@@ -26,8 +26,14 @@ public class UserService {
 		return userRepository.save(user);
 	}
 
-	public void delete(Long id) {
-		userRepository.deleteById(id);
+	public Long delete(Long id) {
+		try {
+			userRepository.deleteById(id);
+		} catch (Exception e) {
+			System.out.println(e);
+			return (long) 0;
+		}
+		return (long) 1;
 
 	}
 
